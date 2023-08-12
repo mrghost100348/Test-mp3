@@ -5,11 +5,11 @@ let name = conn.getName(m.sender)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let av = `${pickRandom(["tuh", "twist", "test", "4", "h"])}`
 
-m.reply( `Good Night ${taguser} `)
+m.reply( `( ${taguser},av `)
   (m.reply, av })
 } 
 
-handler.customPrefix = /^.gm$/i
+handler.customPrefix = /^.gn$/i
 handler.command = new RegExp
 
 export default handler
