@@ -1,10 +1,32 @@
-let handler = async (m, { conn, usedprefix }) => {
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    conn.sendFile(m.chat, global.API('https://some-random-api.com', '/canvas/misc/blur', {
-    avatar: await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png'),
-    }), 'hornycard.png', '*[ ✔ ]*', m)
-    }
-    handler.help = ['blur','difuminar2']
-    handler.tags = ['maker']
-    handler.command = /^(blur|difuminar2)$/i
-    export default handler
+import fetch from 'node-fetch';
+
+let handler = async (m, { conn, text }) => {
+  if (!text) throw '*🎯Please Provide A Pokemon Name To Search*';
+
+  const url = `https://some-random-api.com/pokemon/pokedex?pokemon=${encodeURIComponent(text)}`;
+
+  const response = await fetch(url);
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw `An error occurred: ${json.error}`;
+  }
+
+  const message = `
+*Name:* ${json.name}
+*ID:* ${json.id}
+*Type:* ${json.type}
+*Abilities:* ${json.abilities}
+*Height:* ${json.height}
+*Weight:* ${json.weight}
+*Description:* ${json.description}
+`;
+
+  conn.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m });
+};
+
+handler.help = ['pokedex <pokemon>'];
+handler.tags = ['pokemon'];
+handler.command = /^pokedex/i;
+
+export default handler;
