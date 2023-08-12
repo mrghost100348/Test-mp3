@@ -5,7 +5,7 @@ let name = conn.getName(m.sender)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let av = `${pickRandom(["tuh", "twist", "test", "4", "h"])}`
 
-m.reply`( ${taguser},av `)
+m.reply( `${taguser},av `)
 } 
 
 handler.customPrefix = /^.gn$/i
