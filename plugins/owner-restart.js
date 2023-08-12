@@ -4,9 +4,7 @@ let handler = async (m, { conn, isROwner, text }) => {
     if (conn.user.jid == conn.user.jid) {
     await m.reply('🔄 Restarting Bot...\n Wait A Moment')
     process.send('reset')
-        
-    if (conn.user.jid == conn.user.jid) { 
-    await m.reply('Restarted✅') { 
+    await conn.reply(m.chat, _Restarted✅_, m);
   } else throw 'eh'
 }
 
