@@ -22,7 +22,7 @@ handler.all = async function (m) {
    }
 
   if (/^love|lub|❤️|i like you$/i.test(m.text) ) {
-    let av = '../src/mp3/sad.mp3'
+    let av = '../src/mp3/love.mp3'
     this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
     
