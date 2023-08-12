@@ -1,17 +1,19 @@
-import { spawn } from 'child_process'
-let handler = async (m, { conn, isROwner, text }) => {
-    if (!process.send) throw 'Dont: node main.js\nDo: node index.js'
-    if (conn.user.jid == conn.user.jid) {
-    await m.reply('🔄 Restarting Bot...\n Wait A Moment')
-    process.send('reset')
-    await conn.reply(m.chat, _Restarted✅_, m);
-  } else throw 'eh'
-}
 
-handler.help = ['restart']
-handler.tags = ['owner']
-handler.command = ['restart','reiniciar'] 
+let handler = async (m, { conn}) => {
+let user = global.db.data.users[m.sender]
+let name = conn.getName(m.sender)
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
+let av = `${pickRandom(["tuh", "twist", "test", "4", "h"])}`
 
-handler.rowner = true
+m.reply( `Good Night ${taguser} `)
+await m.reply(m.chat, av })
+} 
+
+handler.customPrefix = /^.gm$/i
+handler.command = new RegExp
 
 export default handler
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
