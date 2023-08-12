@@ -6,7 +6,7 @@ let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let av = `${pickRandom(["tuh", "twist", "test", "4", "h"])}`
 
 m.reply( `Good Night ${taguser} `)
-await m.reply(m.chat, av })
+  (m.reply, av })
 } 
 
 handler.customPrefix = /^.gm$/i
