@@ -4,7 +4,7 @@ const handler = async (m, {conn, text}) => {
     const res = await fetch('https://some-random-api.com/img/pikachu');
     const img = await res.json();
     const caption = `_Pikachu_`.trim();
-    conn.sendFile(m.chat, img[0].url, 'cat.jpg', caption, m);
+    conn.sendFile(m.chat, img[0].url, 'pikachu.jpg', caption, m);
   } catch (e) {
     console.log(e);
     throw '*Error!*';
