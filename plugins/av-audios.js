@@ -1,4 +1,20 @@
 let handler = m => m
+
+export async function before(m, { conn }) {
+  if (m.isBaileys && m.fromMe) {
+    return true;
+  }
+  
+  if (!m.isGroup) {
+    return false;
+  }
+  
+  const user = global.db.data.users[m.sender];
+  
+  if (!bot.bgmbot) {
+    return true;
+  }
+
 handler.all = async function (m) {
 
     if (/^.alive$/i.test(m.text) ) {
