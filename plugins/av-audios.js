@@ -9,7 +9,7 @@ export async function before(m, { conn }) {
     return false;
   }
   
-  const user = global.db.data.users[m.sender];
+  const user = global.db.data.settings[conn.user.jid] || {}
   
   if (!bot.bgmbot) {
     return true;
