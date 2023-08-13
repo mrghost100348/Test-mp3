@@ -19,8 +19,8 @@ handler.all = async function (m) {
    }
 
   if (/^sad|sed|🥺|😭|😢|😥$/i.test(m.text) ) {
-    let av = '../src/mp3/sad.mp3'
-    this.sendFile(m.from, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+    let abhi = '../src/mp3/sad.mp3'
+    this.sendFile(m.chat, abhi, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
   if (/^love|lub|❤️|i like you$/i.test(m.text) ) {
