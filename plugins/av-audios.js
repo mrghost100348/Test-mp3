@@ -14,7 +14,7 @@ handler.all = async function (m) {
    }
 
   if (/^happy|heppy|😁$/i.test(m.text) ) {
-    let audio = 'https://i.imgur.com/T6SsuFL.mp4'
+    let av = 'https://i.imgur.com/T6SsuFL.mp4'
     this.sendFile(m.from, av, 'audio.mp3', mimetype: "audio/mp4",ptt: true}, { quoted: m } );
 }
 
