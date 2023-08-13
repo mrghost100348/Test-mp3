@@ -1,19 +1,3 @@
-export async function before(m, { conn }) {
-  if (m.isBaileys && m.fromMe) {
-    return true;
-  }
-  
-  if (!m.isGroup) {
-    return false;
-  }
-  
-  const user = global.db.data.users[m.sender];
-  
-  if (!isOwner.bgmbot) {
-    return true;
-  }
-
-  
 let handler = m => m
 handler.all = async function (m) {
 
