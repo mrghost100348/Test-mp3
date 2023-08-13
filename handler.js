@@ -541,11 +541,11 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                     this.reply(m.chat, `🎯 your Diamonds Ran Out \n Use The Following Command To Buy More Diamonds \n*${usedPrefix}ToDiamond* <amount`, m)
+                     this.reply(m.chat, `🎯Your Diamonds Ran Out \n Use The Following Command To Buy More Diamonds \n*${usedPrefix}ToDiamond* <amount`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `🎯 Required Level ${plugin.level} To Use This Command. \nYour Level ${_user.level}`, m)
+                    this.reply(m.chat, `🎯Required Level ${plugin.level} To Use This Command. \nYour Level ${_user.level}`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -782,16 +782,16 @@ TO DEACTIVE , PRESS
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This Command Can Only Be Used By The *Creator Of The Bot👨🏻‍💻*',
-        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This Command Can Only Be Used By The *Bot Owner🧑🏻‍💼*',
-        mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This Function Is Only *For Bot Moderators*',
-        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* ℹ️This Command Is Only For *Premium Members*',
-        group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* ℹ️This Command Can Only Be Used In *Groups*',
-        private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* ℹ️This Command Only Be Used In *Private Chat Of The Bot*',
-        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* ℹ️This Command Is Only For *Group Admins*',
-        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* ℹ️To Use This Command I Must Be *Admin!*',
-        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* ℹ️Sign In To Use This Feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg ABHI.19*', 
-        restrict: '*ʀᴇsᴛʀɪᴄᴛ* ℹ️This Feature Is *Disabled*',
+        rowner: 'This Command Can Only Be Used By The *Creator Of The Bot*',
+        owner: 'This Command Can Only Be Used By The *Bot Owner*',
+        mods: 'This Function Is Only *For Bot Moderators*',
+        premium: 'This Command Is Only For *Premium Members*',
+        group: 'This Command Can Only Be Used In *Groups*',
+        private: 'This Command Only Be Used In *Private Chat Of The Bot*',
+        admin: 'This Command Is Only For *Group Admins*',
+        botAdmin: 'To Use This Command I Must Be *Admin!*',
+        unreg: 'Sign In To Use This Feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg ABHI.19*', 
+        restrict: 'This Feature Is *Disabled*',
     }[type]
     if (msg) return m.reply(msg)
 }
