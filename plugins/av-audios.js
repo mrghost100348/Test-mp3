@@ -9,7 +9,7 @@ export async function before(m, { conn }) {
   
   const user = global.db.data.users[m.sender];
   
-  if (!bot.bgmbot) {
+  if (!isOwner.bgmbot) {
     return true;
   }
 
