@@ -14,7 +14,7 @@ handler.all = async function (m) {
    }
 
   if (/^happy|heppy|😁$/i.test(m.text) ) {
-    let av = 'https://i.imgur.com/T6SsuFL.mp4'
+    let av = '../src/mp3/happy.mp3'
     this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
