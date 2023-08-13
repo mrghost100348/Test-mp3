@@ -15,12 +15,12 @@ handler.all = async function (m) {
 
   if (/^happy|heppy|😁$/i.test(m.text) ) {
     let av = 'https://i.imgur.com/T6SsuFL.mp4'
-    this.sendFile(m.from, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
-}
+    this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+   }
 
   if (/^sad|sed|🥺|😭|😢|😥$/i.test(m.text) ) {
     let av = '../src/mp3/sad.mp3'
-    this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+    this.sendFile(m.from, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
   if (/^love|lub|❤️|i like you$/i.test(m.text) ) {
