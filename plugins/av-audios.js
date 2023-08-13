@@ -1,5 +1,3 @@
-let handler = m => m
-
 export async function before(m, { conn }) {
   if (m.isBaileys && m.fromMe) {
     return true;
@@ -14,7 +12,7 @@ export async function before(m, { conn }) {
   if (!bot.bgmbot) {
     return true;
   }
-
+let handler = m => m
 handler.all = async function (m) {
 
     if (/^.alive$/i.test(m.text) ) {
