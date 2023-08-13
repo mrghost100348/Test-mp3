@@ -7,11 +7,13 @@ export async function before(m, { conn }) {
     return false;
   }
   
-  const user = global.db.data.settings[conn.user.jid] || {}
+  const user = global.db.data.users[m.sender];
   
   if (!bot.bgmbot) {
     return true;
   }
+
+  
 let handler = m => m
 handler.all = async function (m) {
 
