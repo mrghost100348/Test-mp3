@@ -19,7 +19,7 @@ const handler = async (m, {text, conn, usedPrefix, command}) => {
       } else conn.reply(m.chat, why, m, {mentions: [m.sender]});
       break;
   }
-  if (res[0]) conn.reply(m.chat, `_✅${command}_ ${res ? `*${res.map((v) => '@' + v.split('@')[0])}` : ''}*`, m, {mentions: res});
+  if (res[0]) conn.reply(m.chat, `_✅Done_ ${res ? `*${res.map((v) => '@' + v.split('@')[0])}` : ''}*`, m, {mentions: res});
 };
 handler.command = /^(block|unblock)$/i;
 handler.rowner = true;
