@@ -2,7 +2,7 @@ import cheerio from 'cheerio';
 import axios from 'axios';
 const handler = async (m, {conn, text, __dirname, usedPrefix, command}) => {
   if (!global.db.data.chats[m.chat].nsfw && m.isGroup) throw '⚠️This Group Doesnt Supprt Nsfw Enable It By *.on nsfw*';
-  if (!text) throw '⚠️Enter The Type Name *📌Example: .hentais hot*';
+  if (!text) throw '⚠️Enter The Type Name *📌Example: .xnxxs hot*';
   const searchResults = await searchHentai(text);
   let teks = searchResults.result.map((v, i) => `
 ${i+1}. *_${v.title}_*
@@ -22,7 +22,7 @@ handler.command = /^(hentaisearch|hentais)$/i;
 export default handler;
 async function searchHentai(search) {
   return new Promise((resolve, reject) => {
-    axios.get('https://hentai.tv/?s=' + search).then(async ({data}) => {
+    axios.get('https://www.xnxx.com' + search).then(async ({data}) => {
       const $ = cheerio.load(data);
       const result = {};
       const res = [];
