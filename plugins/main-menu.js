@@ -264,8 +264,8 @@ ${readMore}
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react('📃')
 }
-handler.help = ['allmenu']
+handler.help = ['list']
 handler.tags = ['main']
-handler.command = ['allmenu', 'menu'] 
+handler.command = ['allmenu', 'list'] 
 
 export default handler
