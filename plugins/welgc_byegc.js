@@ -1,8 +1,8 @@
 let handler = async (m, { conn, text, usedPrefix, command, customPrefix }) => {
-let stikerwelgc = "./src/welgc.webp"
-let stikerbyegc = "./src/byegc.webp"
+let stikerbot = "./src/bot.webp"
+let stikerbyegc = "./src/bot.webp"
 if (command == 'bot') {
-conn.sendFile(m.chat, stikerwelgc, 'sticker.webp', null, m, false, { 
+conn.sendFile(m.chat, stikerbot, 'sticker.webp', null, m, false, { 
 contextInfo: { externalAdReply: { title: ''𝙰𝙱𝙷𝙸𝚂𝙷𝙴𝙺-𝚂𝙴𝚁🎯', body: '𝙰𝙱𝙷𝙸𝚂𝙷𝙴𝙺-𝚂𝚄𝚁𝙴𝚂𝙷☘️', sourceUrl: `https://github.com/AbhishekSuresh2/ABHISHEK-SER`, thumbnail: imagen1}}})  
 }
 if (command == '.git') {
